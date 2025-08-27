@@ -1,0 +1,99 @@
+You are an expert full-stack developer.  
+Build me a **Portfolio Website** with the following requirements:
+
+---
+
+## 🔹 Core Concept
+- Website split into **two panels**:
+  - **Left Panel:** Displays my photo (fixed at top) and dynamic cards for projects, skills, resume preview, and certificates.  
+  - **Right Panel:** A **chatbot** powered by Groq API (using my `GROQ_API_KEY`). The chatbot acts as my portfolio narrator.  
+
+---
+
+## 🔹 Features
+1. **Chatbot Integration**
+   - Use **Groq API** (LLaMA / Mixtral / Gemma models).
+   - System prompt: (use my portfolio prompt that makes chatbot act as "Arjun’s Portfolio AI Assistant").
+   - Short, professional answers (2–5 sentences).
+   - Support structured JSON responses for left panel updates.
+
+2. **Left Panel Content**
+   - My photo (circle avatar at top).
+   - Dynamic cards that update when chatbot sends commands:
+     - **show_projects** → project cards with title, description, image, and link.
+     - **show_skills** → skill badges/cards.
+     - **show_resume** → resume download button.
+     - **show_certificates** → list of certificates.
+   - Cards should have smooth animations (Framer Motion).
+
+3. **Interactivity**
+   - Chat UI with typing effect + scroll.
+   - Dark/Light mode toggle.
+   - Left panel dynamically updates as per chatbot commands.
+   - Resume download link + GitHub + LinkedIn buttons.
+
+4. **Deployment**
+   - Deploy using **GitHub + Vercel**.
+   - Store **GROQ_API_KEY** in `.env.local`.
+   - Use free Groq API endpoint.
+
+---
+
+## 🔹 Tech Stack
+- **Frontend Framework:** Next.js 14 (App Router) or React + Vite.
+- **Styling:** Tailwind CSS + Framer Motion.
+- **Components:** shadcn/ui for cards, buttons, inputs.
+- **Chat UI:** Custom bubble design with smooth animation.
+- **Icons:** lucide-react.
+
+---
+
+## 🔹 File Structure (Next.js App Router)
+
+portfolio-chatbot/
+ ├── public/
+ │   ├── profile.jpg
+ │   ├── project1.png
+ │   ├── resume.pdf
+ ├── src/
+ │   ├── app/
+ │   │   ├── layout.jsx
+ │   │   ├── page.jsx
+ │   ├── components/
+ │   │   ├── Chatbot.jsx
+ │   │   ├── LeftPanel.jsx
+ │   │   ├── ProjectCard.jsx
+ │   │   ├── ResumeButton.jsx
+ │   ├── lib/
+ │   │   ├── groqClient.js   # wrapper for API
+ │   ├── styles/
+ │   │   ├── globals.css
+ ├── .env.local   # GROQ_API_KEY
+ ├── package.json
+
+---
+
+## 🔹 Deliverables
+1. **Working Next.js/Tailwind app** with:
+   - Split screen layout
+   - Chatbot (Groq API integrated)
+   - Left panel updates via JSON commands
+   - Resume button + links
+   - Animations
+
+2. **README.md** with:
+   - Project setup
+   - Running locally
+   - Deploying to Vercel
+   - Where to place assets (photo, projects, resume)
+
+---
+
+## 🔹 Notes
+- Make the chatbot **Arjun’s portfolio narrator**.
+- Keep design **modern, minimal, professional**.
+- Optimize for mobile + desktop.
+- All placeholders (photo, resume, project images) should be stored in `public/`.
+- Default state: Left panel shows my photo + welcome text + “Ask me about Arjun’s projects/skills/resume”.
+
+---
